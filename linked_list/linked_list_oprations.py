@@ -60,20 +60,26 @@ class LinkedList:
             raise Exception("Node id must be integer!")
 
     def remove_node(self, node_id: int):
-        if isinstance(node_id, int):
-            current_node = self.head
-            prev_node = self.head
-            while current_node:
-                if current_node.data == node_id:
-                    break
-                prev_node = current_node
-                current_node = current_node.next
-            if current_node.next is not None:
-                prev_node.next = current_node.next
+        if isinstance(node_id, int) and self.head.data is not None:
+            if self.head.data == node_id:
+                if self.head.next is not None:
+                    self.head = self.head.next
+                else:
+                    self.head = None
+            else:
+                current_node = self.head
+                prev_node = self.head
+                while current_node:
+                    if current_node.data == node_id:
+                        break
+                    prev_node = current_node
+                    current_node = current_node.next
+                if current_node:
+                    prev_node.next = current_node.next
         else:
             raise Exception("Node id must be integer!")
 
-    def get_node(self, node_id: int) ->Node | None :
+    def get_node(self, node_id: int) ->Node:
         if isinstance(node_id, int):
             current_node = self.head
             while current_node:
