@@ -41,7 +41,7 @@ class Queue:
             else:
                 print("The capacity is full!")
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     def dequeue(self):
         """Remove a node to the queue."""

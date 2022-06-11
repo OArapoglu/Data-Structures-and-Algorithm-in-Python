@@ -40,7 +40,7 @@ class Stack:
                 node.next = self.root
                 self.root = node
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     def pop(self):
         """Pop a node from the stack."""

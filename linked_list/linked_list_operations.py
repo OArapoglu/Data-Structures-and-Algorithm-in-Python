@@ -46,7 +46,7 @@ class LinkedList:
             node.next = self.head
             self.head = node
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     def append_node(self, node_id: int):
         """Set a node as a tail node of the linked list."""
@@ -57,7 +57,7 @@ class LinkedList:
                 last = last.next
             last.next = node
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     @staticmethod
     def insert_after_node(new_node_id: int, prev_node_id: Node):
@@ -67,7 +67,7 @@ class LinkedList:
             node.next = prev_node_id.next
             prev_node_id.next = node
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     def remove_node(self, node_id: int):
         """Remove a node from the linked list."""
@@ -88,7 +88,7 @@ class LinkedList:
                 if current_node:
                     prev_node.next = current_node.next
         else:
-            raise Exception("Node id must be integer!")
+            print("Node id must be integer!")
 
     def get_node(self, node_id: int) -> Node:
         """Get a node according to node id."""
